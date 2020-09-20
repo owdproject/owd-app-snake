@@ -1,0 +1,26 @@
+{
+  "name": "snake",
+  "commands": true,
+  "config": true,
+  "store": true,
+  "windows": [
+    {
+      "name": "WindowSnake",
+      "title": "Snake 2D",
+      "titleShort": "Snake",
+      "icon": "table-row",
+      "window": {
+        "menu": false,
+        "closed": true,
+        "minimized": false,
+        "resizable": false,
+        "forceMobileMaximized": true,
+        "width": 480,
+        "height": 320,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    }
+  ]
+}
