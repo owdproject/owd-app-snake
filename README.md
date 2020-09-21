@@ -18,6 +18,7 @@
 
 ## Quick install
 - Copy the content of the `client` module folder into `owd-client/src/modules/snake`
+- Copy the content of the `client/config` default config folder into `owd-client/config`
 - Add the reference of this module into `owd-client/config/modules.json` 
 
 ## License
