@@ -68,7 +68,7 @@
 </template>
 
 <script>
-  import Window from "../../../core/components/window/Window";
+  import Window from "~/core/components/window/Window";
   import p5 from 'p5';
 
   export default {
