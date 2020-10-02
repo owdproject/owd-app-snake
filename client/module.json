@@ -1,12 +1,8 @@
 {
   "name": "snake",
   "version": "1.0.0",
-  "license": "MIT",
-  "homepage": "https://github.com/hacklover/owd-snake",
-  "author": {
-    "name": "hacklover",
-    "url": "https://hacklover.net"
-  },
+  "singleton": true,
+  "autostart": true,
   "commands": true,
   "config": true,
   "store": true,
@@ -17,7 +13,7 @@
       "titleShort": "Snake",
       "icon": "table-row",
       "window": {
-        "menu": false,
+        "menu": true,
         "closed": true,
         "minimized": false,
         "resizable": false,
@@ -30,7 +26,10 @@
       }
     }
   ],
-  "dependencies": {
-    "p5": "^0.10.2"
+  "license": "MIT",
+  "homepage": "https://github.com/hacklover/owd-sample",
+  "author": {
+    "name": "hacklover",
+    "url": "https://hacklover.net"
   }
 }
