@@ -456,7 +456,7 @@
           font-size: 10px;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.18);
-          font-family: monospace, FreeMono;
+          font-family: $fontMono;
           letter-spacing: 1px;
 
           .anarchy {

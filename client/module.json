@@ -1,11 +1,9 @@
 {
   "name": "snake",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "singleton": true,
   "autostart": true,
-  "commands": true,
   "config": true,
-  "store": true,
   "windows": [
     {
       "name": "WindowSnake",
