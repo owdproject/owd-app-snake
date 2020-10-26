@@ -1,0 +1,13 @@
+{
+  "name": "owd-snake",
+  "version": "2.0.0",
+  "dependencies": {
+    "p5": "^0.10.2"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hacklover/owd-snake",
+  "author": {
+    "name": "hacklover",
+    "url": "https://hacklover.net"
+  }
+}
