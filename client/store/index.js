@@ -36,7 +36,6 @@ export default {
       };
 
       eventSource.onerror = () => {
-        commit('SET_CONNECTED', false);
         eventSource.close();
 
         setTimeout(() => dispatch('snakeStart'), 5000);
