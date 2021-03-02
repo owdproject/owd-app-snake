@@ -1,6 +1,6 @@
 {
   "name": "snake",
-  "version": "2.0.0",
+  "version": "1.4.3",
   "singleton": true,
   "autostart": true,
   "config": true,
@@ -9,7 +9,7 @@
       "name": "WindowSnake",
       "title": "Snake 2D",
       "titleShort": "Snake",
-      "icon": "table-row",
+      "icon": "mdi-table-row",
       "window": {
         "menu": true,
         "closed": true,
@@ -28,6 +28,6 @@
   "homepage": "https://github.com/hacklover/owd-snake",
   "author": {
     "name": "hacklover",
-    "url": "https://hacklover.net"
+    "url": "https://github.com/hacklover"
   }
 }
