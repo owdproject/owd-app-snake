@@ -1,6 +1,6 @@
 export default {
   state: {
-    apiBaseUrl: 'https://snake.hacklover.net',
+    apiBaseUrl: 'https://hacklover-snake-server.herokuapp.com',
     eventSource: null,
     eventLog: null
   },
