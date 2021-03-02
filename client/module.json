@@ -1,6 +1,12 @@
 {
   "name": "snake",
   "version": "1.4.3",
+  "license": "MIT",
+  "homepage": "https://github.com/hacklover/owd-snake",
+  "author": {
+    "name": "hacklover",
+    "url": "https://github.com/hacklover"
+  },
   "singleton": true,
   "autostart": true,
   "config": true,
@@ -24,10 +30,7 @@
       }
     }
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/hacklover/owd-snake",
-  "author": {
-    "name": "hacklover",
-    "url": "https://github.com/hacklover"
+  "dependencies": {
+    "p5": "^0.10.2"
   }
 }
