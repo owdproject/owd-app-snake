@@ -1,30 +1,31 @@
 {
   "name": "snake",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha",
   "license": "MIT",
-  "homepage": "https://github.com/hacklover/owd-snake",
+  "homepage": "https://github.com/hacklover/owd-debug",
   "author": {
     "name": "hacklover",
-    "url": "https://github.com/hacklover"
+    "url": "https://hacklover.net"
   },
   "singleton": true,
-  "autostart": true,
   "config": true,
   "windows": [
     {
       "name": "WindowSnake",
+      "category": "games",
       "title": "Snake 2D",
       "titleShort": "Snake",
       "icon": "mdi-table-row",
-      "window": {
-        "menu": true,
-        "closed": true,
-        "minimized": false,
-        "resizable": false,
-        "forceMobileMaximized": true,
+      "menu": true,
+      "minimized": false,
+      "resizable": true,
+      "forceMobileMaximized": true,
+      "size": {
         "width": 480,
-        "height": 320,
-        "x": 0,
+        "height": 320
+      },
+      "position": {
+        "x": -1,
         "y": 0,
         "z": 0
       }

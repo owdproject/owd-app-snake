@@ -1,8 +1,8 @@
-import {Module} from "@owd-client/core";
-import axios from "axios";
-import snakeStore from './store/index'
+import {ModuleApp} from "@owd-client/core";
 
-export default class SnakeModule extends Module {
+import snakeStore from './store'
+
+export default class SnakeModule extends ModuleApp {
   constructor(context) {
     super(context)
   }
@@ -11,38 +11,27 @@ export default class SnakeModule extends Module {
     return snakeStore
   }
 
-  loadCommands({store,terminal}) {
+  loadCommands({store}) {
     return {
-      'snake': function (...args) {
+      'snake': function (t, args) {
         if (args.length === 0) {
-          this.echo();
-          this.echo(terminal.textColor("SNAKE USAGE", terminal.defaultColors.menu));
-          this.echo(terminal.textColor("snake up", "white") + "             Move it up");
-          this.echo(terminal.textColor("snake left", "white") + "           Move it left");
-          this.echo(terminal.textColor("snake right", "white") + "          Move it right");
-          this.echo(terminal.textColor("snake down", "white") + "           Move it down");
-          this.echo();
-          // this.echo(terminal.textColor("snake anarchy", "white") + "        Vote for anarchy mode");
-          // this.echo(terminal.textColor("snake democracy", "white") + "      Vote for democracy mode");
-          // this.echo();
+          t.writeln("\r\n\n\x1b[1;36mSNAKE USAGE\n");
+          t.writeln("\x1b[0msnake up\x1B[37m" + "             Move it up");
+          t.writeln("\x1b[0msnake left\x1B[37m" + "           Move it left");
+          t.writeln("\x1b[0msnake right\x1B[37m" + "          Move it right");
+          t.writeln("\x1b[0msnake down\x1B[37m" + "           Move it down");
 
           // open snake windows
-          store.dispatch('core/windows/windowOpen', 'WindowSnake');
+          store.dispatch('core/window/windowOpen', 'WindowSnake');
         } else {
-          this.pause();
-
           switch (args[0].trim().toLowerCase()) {
             case 'up':
             case 'left':
             case 'right':
             case 'down':
-              axios.post(store.getters['snake/apiInputUrl'], {
-                direction: args[0]
-              });
+              store.dispatch('snake/sendDirection', args[0]);
               break;
           }
-
-          this.resume();
         }
       }
     }

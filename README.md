@@ -13,7 +13,7 @@
 [Try it out](https://hacklover.net/client), just open the terminal and type "snake"
 
 ## Features
-- A 2D client for [Web Plays Snake](https://snake.hacklover.net) that connects through SSE
+- A 2D client for [Web Plays Snake](https://snake.hacklover.net) that connects through the Server-Sent Events API
 - Play from the terminal, send "snake" for available commands (requires [owd-terminal](https://github.com/hacklover/owd-terminal))
 
 ## Quick install
@@ -21,6 +21,9 @@
 - Copy the content of the `client/config` config folder into `owd-client/config`
 - Install each module dependency manually with `npm install <dependency>`
 - Add the reference of this module into `owd-client/config/modules.json` 
+
+## Compatibility
+- Open Web Desktop client v2.0.0-alpha.2
 
 ## Dependencies
 - p5
