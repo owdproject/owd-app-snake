@@ -28,6 +28,24 @@ export default {
       goodies: 0,
       moves: 0,
       speed: 0
+    },
+
+    theme: {
+      canvas: [53],
+      canvasAlt: [17],
+      snake: {
+        body: [4, 150, 193],
+        tail: [4, 160, 193],
+        damaged: [245, 47, 47]
+      },
+      goodies: {
+        special: [232, 196, 4],
+        slow: [20, 139, 152],
+        fast: [255, 110, 23],
+        random: [137, 81, 188],
+        invisible: [238, 238, 238],
+        default: [102, 193, 21]
+      }
     }
   },
 
