@@ -74,7 +74,7 @@
 
 <script>
   import Window from '@owd-client/core/src/components/window/Window.vue';
-  import { onMounted } from 'vue'
+  import {onMounted, onUnmounted} from 'vue'
   import {useStore, mapGetters} from 'vuex';
 
   export default {
@@ -87,6 +87,10 @@
 
       onMounted(() => {
         store.dispatch('snake/initialize', props.window)
+      })
+
+      onUnmounted(() => {
+        store.dispatch('snake/destroy')
       })
     },
     computed: {

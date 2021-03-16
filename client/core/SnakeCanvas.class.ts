@@ -58,7 +58,7 @@ export default class SnakeCanvas {
   }
 
   destroy() {
-
+    this.canvas.p5.remove()
   }
 
   private async canvasInitialize() {
