@@ -136,6 +136,10 @@ export default {
       getters.instance.server.disconnect()
     },
 
+    destroy({getters}) {
+      getters.instance.canvas.destroy()
+    },
+
     sendDirection({getters}, direction) {
       getters.instance.input.sendDirection(direction)
     }
