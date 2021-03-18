@@ -14,7 +14,12 @@
       "name": "WindowSnake",
       "category": "games",
       "title": "Snake 2D",
-      "icon": "mdi-table-row",
+      "icon": {
+        "name": "mdi-table-row",
+        "offset": {
+          "y": -2
+        }
+      },
       "menu": true,
       "minimized": false,
       "resizable": true,
