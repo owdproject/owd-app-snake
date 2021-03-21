@@ -74,7 +74,7 @@
 
 <script>
   import Window from '@owd-client/core/src/components/window/Window.vue';
-  import {onMounted, onUnmounted} from 'vue'
+  import {onMounted, onUnmounted, computed} from 'vue'
   import {useStore, mapGetters} from 'vuex';
 
   export default {
@@ -90,11 +90,13 @@
       })
 
       onUnmounted(() => {
-        store.dispatch('snake/destroy')
+        store.dispatch('snake/terminate')
       })
-    },
-    computed: {
-      ...mapGetters('snake', [ 'server', 'game' ])
+
+      return {
+        server: computed(() => store.getters['snake/server']),
+        game: computed(() => store.getters['snake/game']),
+      }
     }
   }
 </script>

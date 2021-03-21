@@ -18,11 +18,11 @@ export default class Snake {
   }
 
   initialize() {
-    this.canvas.initialize()
-    this.input.initialize()
+    this.canvas.create()
+    this.input.create()
   }
 
-  destroy() {
+  terminate() {
     this.canvas.destroy()
     this.input.destroy()
   }

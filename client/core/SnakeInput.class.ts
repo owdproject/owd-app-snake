@@ -18,7 +18,7 @@ export default class SnakeInput {
     this.window = window
   }
 
-  initialize() {
+  create() {
     const self = this
 
     // handle context with addEventListener/removeEventListener

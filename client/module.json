@@ -15,7 +15,7 @@
       "category": "games",
       "title": "Snake 2D",
       "icon": {
-        "name": "mdi-table-row",
+        "name": "mdi-cube-unfolded",
         "offset": {
           "y": -2
         }

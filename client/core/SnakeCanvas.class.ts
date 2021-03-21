@@ -41,7 +41,7 @@ export default class SnakeCanvas {
     return this.store.getters['snake/game']
   }
 
-  initialize() {
+  create() {
     // init canvas
     this.canvasInitialize().then(() => {
       console.log('[OWD] Snake canvas initialized')
@@ -66,13 +66,6 @@ export default class SnakeCanvas {
       const config = (p: any) => {
         p.setup = () => {
           const canvas = p.createCanvas(560, 560);
-
-          const canvasOld = document.getElementById('snake-canvas-' + this.window.uniqueID)
-          const canvasContainer = document.getElementById('snake-canvas-container-' + this.window.uniqueID)
-
-          if (canvasOld) {
-            canvasOld.remove()
-          }
 
           canvas.fill(...this.theme.canvas);
           canvas.parent('snake-canvas-container-' + this.window.uniqueID);

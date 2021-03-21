@@ -121,11 +121,15 @@ export default {
 
   actions: {
     initialize({commit}, window) {
-      const snake = new Snake(this, window)
+      const instance = new Snake(this, window)
 
-      if (snake) {
-        commit('SET_INSTANCE', snake)
+      if (instance) {
+        commit('SET_INSTANCE', instance)
       }
+    },
+
+    terminate({getters}) {
+      getters.instance.terminate()
     },
 
     connect({getters}) {
@@ -134,10 +138,6 @@ export default {
 
     disconnect({getters}) {
       getters.instance.server.disconnect()
-    },
-
-    destroy({getters}) {
-      getters.instance.canvas.destroy()
     },
 
     sendDirection({getters}, direction) {
