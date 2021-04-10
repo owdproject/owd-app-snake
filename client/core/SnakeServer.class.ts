@@ -71,7 +71,7 @@ export default class SnakeServer {
         }
 
         clearInterval(this.intervalReconnect);
-        this.intervalReconnect = setInterval(() => this.store.dispatch('snake/snakeStart'), 5000);
+        this.intervalReconnect = setInterval(() => this.connect(), 5000);
       }
     }, 1000)
   }
