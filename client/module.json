@@ -14,12 +14,7 @@
       "name": "WindowSnake",
       "category": "games",
       "title": "Snake 2D",
-      "icon": {
-        "name": "mdi-cube-unfolded",
-        "offset": {
-          "y": -2
-        }
-      },
+      "icon": "mdi-cube-unfolded",
       "menu": true,
       "minimized": false,
       "resizable": true,
