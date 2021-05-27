@@ -1,5 +1,5 @@
 # Snake module for OWD Client
-> A snake client in 2D of Web Plays Snake for Open Web Desktop
+> 2D snake client of Web Plays Snake for Open Web Desktop
 
 <p>
     <img src="media/demo.png" alt="OWD Snake module demo" />
