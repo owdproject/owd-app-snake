@@ -1,8 +1,8 @@
 <template>
-  <Window :window="window">
+  <Window :window="props.window">
     <div class="snake-container">
       <div
-        :id="`snake-canvas-container-${window.uniqueID}`"
+        :id="`snake-canvas-container-${props.window.uniqueID}`"
         :class="['snake-canvas__container', game.canvas.container.classes.join(' ')]"
       >
 
@@ -72,33 +72,27 @@
   </Window>
 </template>
 
-<script>
-  import Window from '@owd-client/core/src/components/window/Window.vue';
-  import {onMounted, onUnmounted, computed} from 'vue'
-  import {useStore, mapGetters} from 'vuex';
+<script setup>
+import {onMounted, onUnmounted, computed, defineProps} from 'vue'
+  import {useStore} from 'vuex';
+  import Window from '@owd-client/core/src/components/window/app/WindowApp.vue';
 
-  export default {
-    components: {Window},
-    props: {
-      window: Object
-    },
-    setup(props) {
-      const store = useStore()
+  const props = defineProps({
+    window: Object
+  })
 
-      onMounted(() => {
-        store.dispatch('snake/initialize', props.window)
-      })
+  const server = computed(() => store.getters['snake/server'])
+  const game = computed(() => store.getters['snake/game'])
 
-      onUnmounted(() => {
-        store.dispatch('snake/terminate')
-      })
+  const store = useStore()
 
-      return {
-        server: computed(() => store.getters['snake/server']),
-        game: computed(() => store.getters['snake/game']),
-      }
-    }
-  }
+  onMounted(() => {
+    store.dispatch('snake/initialize', props.window)
+  })
+
+  onUnmounted(() => {
+    store.dispatch('snake/terminate')
+  })
 </script>
 
 <style lang="scss">
@@ -180,7 +174,7 @@
 
         li {
           > span {
-            color: $windowColorActive;
+            color: $owd-window-text-active;
             margin-left: 2px;
             font-size: 12px;
           }
@@ -205,7 +199,7 @@
 
         li {
           display: inline-block;
-          background: $windowContentTag;
+          background: $owd-window-item-background;
           margin: 0 6px 6px 0;
           padding: 2px 10px 2px 8px;
           border-radius: 10px;

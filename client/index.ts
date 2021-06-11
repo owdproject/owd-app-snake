@@ -1,17 +1,47 @@
-import {ModuleApp} from "@owd-client/core";
-
+import {ModuleApp} from "@owd-client/core/index";
+import {OwdModuleAppLoadCommandsContext} from "@owd-client/types";
 import snakeStore from './store'
+import snakeConfig from '~/../config/snake/config.json'
+
+// window components
+import WindowSnake from "./windows/WindowSnake.vue";
 
 export default class SnakeModule extends ModuleApp {
-  constructor(context) {
-    super(context)
+  loadModule() {
+    return {
+      name: "snake",
+      singleton: true,
+      config: snakeConfig,
+      windows: [
+        {
+          component: WindowSnake,
+          name: "WindowSnake",
+          category: "games",
+          title: "Snake 2D",
+          icon: "mdi-cube-unfolded",
+          menu: true,
+          minimized: false,
+          resizable: true,
+          forceMobileMaximized: true,
+          size: {
+            width: 480,
+            height: 320
+          },
+          position: {
+            x: -1,
+            y: 0,
+            z: 0
+          }
+        }
+      ]
+    }
   }
 
   loadStore() {
     return snakeStore
   }
 
-  loadCommands({store}) {
+  loadCommands({store}: OwdModuleAppLoadCommandsContext) {
     return {
       'snake': function (t, args) {
         if (args.length === 0) {
