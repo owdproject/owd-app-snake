@@ -199,7 +199,7 @@ import {onMounted, onUnmounted, computed, defineProps} from 'vue'
 
         li {
           display: inline-block;
-          background: $owd-window-item-background;
+          background: $owd-window-content-tag;
           margin: 0 6px 6px 0;
           padding: 2px 10px 2px 8px;
           border-radius: 10px;
