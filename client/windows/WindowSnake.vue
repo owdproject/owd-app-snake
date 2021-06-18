@@ -180,7 +180,7 @@ import {onMounted, onUnmounted, computed, defineProps} from 'vue'
           }
 
           b {
-            color: #66c114;
+            color: #1da705;
             font-size: 12px;
             font-weight: bold;
             margin-left: 2px;
