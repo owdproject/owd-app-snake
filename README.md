@@ -24,16 +24,16 @@
 - Move to your client folder, then
   ```
   # Install this module with Npm
-  npm install hacklover/owd-app-snake
+  npm install https://github.com/hacklover/owd-app-snake
   
   # Or using Yarn
-  yarn add hacklover/owd-app-snake
+  yarn add https://github.com/hacklover/owd-app-snake
   ```
 - Define this module in `owd-client/client.extensions.ts`
   ```js
   import AboutModule from "@owd-client/core/src/modules/app/about";
   import DebugModule from "@owd-client/core/src/modules/app/debug";
-  import SnakeModule from "hacklover/owd-app-snake/client";
+  import SnakeModule from "owd-app-snake/client";
 
   export default {
     app: {
