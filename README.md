@@ -21,16 +21,43 @@
 - Play from the terminal, send "snake" for available commands (requires [owd-terminal](https://github.com/hacklover/owd-terminal))
 
 ## Quick install
-- Copy the content of the `client` module folder into `owd-client/src/modules/snake`
-- Copy the content of the `client/config` config folder into `owd-client/config`
-- Install each module dependency manually with `npm install <dependency>`
-- Add the reference of this module into `owd-client/config/modules.json` 
+- Move to your client folder, then
+  ```
+  # Install this module with Npm
+  npm install hacklover/owd-app-snake
+  
+  # Or using Yarn
+  yarn add hacklover/owd-app-snake
+  ```
+- Define this module in `owd-client/client.extensions.ts`
+  ```js
+  import AboutModule from "@owd-client/core/src/modules/app/about";
+  import DebugModule from "@owd-client/core/src/modules/app/debug";
+  import SnakeModule from "hacklover/owd-app-snake/client";
 
-## Compatibility
-- Open Web Desktop client v2.0.0-beta
+  export default {
+    app: {
+      modules: [
+        AboutModule,
+        DebugModule,
+        SnakeModule,
+      ]
+    },
+    ...
+  ```
+- Add this code to `owd-client/vite.config.ts`
+  ```
+  optimizeDeps: {
+    include: ['p5']
+  }
+  ```
+- Copy the content of the [client/config](https://github.com/hacklover/owd-app-snake/tree/master/client/config) folder into `owd-client/config`
 
 ## Dependencies
 - p5
+
+## Compatibility
+- Open Web Desktop client v2.0.0-beta.1
 
 ## License
 This project is released under the [MIT License](LICENSE)
