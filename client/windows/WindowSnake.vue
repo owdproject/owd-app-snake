@@ -1,5 +1,5 @@
 <template>
-  <Window :window="props.window">
+  <WindowApp :window="props.window">
     <div class="snake-container">
       <div
         :id="`snake-canvas-container-${props.window.uniqueID}`"
@@ -69,13 +69,12 @@
 
       </div>
     </div>
-  </Window>
+  </WindowApp>
 </template>
 
 <script setup>
 import {onMounted, onUnmounted, computed, defineProps} from 'vue'
   import {useStore} from 'vuex';
-  import Window from '@owd-client/core/src/components/window/app/WindowApp.vue';
 
   const props = defineProps({
     window: Object
