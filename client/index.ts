@@ -7,7 +7,7 @@ import snakeConfig from '~/../config/snake/config.json'
 import WindowSnake from "./windows/WindowSnake.vue";
 
 export default class SnakeModule extends ModuleApp {
-  loadModule() {
+  setup() {
     return {
       name: "snake",
       singleton: true,
@@ -37,11 +37,11 @@ export default class SnakeModule extends ModuleApp {
     }
   }
 
-  loadStore() {
+  setupStore() {
     return snakeStore
   }
 
-  loadCommands({store}: OwdModuleAppLoadCommandsContext) {
+  setupCommands({store}: OwdModuleAppLoadCommandsContext) {
     return {
       'snake': function (t, args) {
         if (args.length === 0) {
