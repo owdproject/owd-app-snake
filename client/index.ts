@@ -1,5 +1,5 @@
 import {ModuleApp} from "@owd-client/core/index";
-import {OwdModuleAppLoadCommandsContext} from "@owd-client/types";
+import {OwdModuleAppSetupCommandsContext} from "@owd-client/types";
 import snakeStore from './store'
 import snakeConfig from '~/../config/snake/config.json'
 
@@ -41,7 +41,7 @@ export default class SnakeModule extends ModuleApp {
     return snakeStore
   }
 
-  setupCommands({store}: OwdModuleAppLoadCommandsContext) {
+  setupCommands({store}: OwdModuleAppSetupCommandsContext) {
     return {
       'snake': function (t, args) {
         if (args.length === 0) {
