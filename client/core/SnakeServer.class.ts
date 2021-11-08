@@ -13,14 +13,6 @@ export default class SnakeServer {
     this.window = window
   }
 
-  initialize() {
-    this.connect()
-  }
-
-  destroy() {
-    this.disconnect()
-  }
-
   get connected() {
     return this.store.getters['snake/server'].connected
   }
@@ -31,7 +23,7 @@ export default class SnakeServer {
    *
    * @private
    */
-  private connect() {
+  public connect() {
     // check if is already connected
     if (this.connected) {
       return false
@@ -82,7 +74,7 @@ export default class SnakeServer {
    *
    * @private
    */
-  private disconnect() {
+  public disconnect() {
     // check if is already disconnected
     if (!this.connected) {
       return false

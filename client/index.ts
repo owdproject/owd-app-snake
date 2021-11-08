@@ -19,8 +19,6 @@ export default class SnakeModule extends ModuleApp {
           category: "games",
           title: "Snake 2D",
           icon: "mdi-cube-unfolded",
-          menu: true,
-          minimized: false,
           resizable: true,
           forceMobileMaximized: true,
           size: {

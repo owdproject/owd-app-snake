@@ -44,7 +44,7 @@ export default class SnakeCanvas {
   create() {
     // init canvas
     this.canvasInitialize().then(() => {
-      console.log('[OWD] Snake canvas initialized')
+      console.log('[owd] snake canvas initialized')
     })
 
     // subscribe to snake changes

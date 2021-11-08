@@ -20,6 +20,7 @@ export default class Snake {
   initialize() {
     this.canvas.create()
     this.input.create()
+    this.server.connect()
   }
 
   terminate() {

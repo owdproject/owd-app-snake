@@ -10,7 +10,7 @@ export default class SnakeInput {
 
   private watcher: any = {
     focused: false,
-    opened: false
+    minimized: false
   }
 
   constructor(store: any, window: OwdModuleAppWindowInstance) {
@@ -30,21 +30,26 @@ export default class SnakeInput {
       self.handleKeyUp.call(self)
     }
 
-    // watch window focusing status
+    // if focused, add keyup event listener
+    if (this.window.storage.focused) {
+      document.addEventListener('keyup', handleKeyUp, false)
+    }
+
+    // watch window focusing status, add keyup event listener
     this.watcher.focused = watch(() => this.window.storage.focused, function (value: boolean) {
       document[value ? 'addEventListener' : 'removeEventListener']('keyup', handleKeyUp, false)
     })
 
-    // watch window opening status
-    this.watcher.opened = watch(() => this.window.storage.opened, function (value: boolean) {
-      self.store.dispatch(value ? 'snake/connect' : 'snake/disconnect')
+    // watch window opening status, connect or disconnect from sse
+    this.watcher.minimized = watch(() => this.window.storage.minimized, function (value: boolean) {
+      self.store.dispatch(!value ? 'snake/connect' : 'snake/disconnect')
     })
   }
 
   destroy() {
     // reset watchers
     this.watcher.focused()
-    this.watcher.opened()
+    this.watcher.minimized()
   }
 
   /**
@@ -81,7 +86,7 @@ export default class SnakeInput {
    */
   sendDirection(direction: string) {
     axios.post(this.store.getters['snake/serverApiInput'], {direction}).then(() => {
-      console.log(`[OWD] Snake direction sent: ${direction}`)
+      console.log(`[owd] snake direction sent: ${direction}`)
     })
   }
 }
