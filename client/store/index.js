@@ -54,8 +54,16 @@ export default {
       return state.instance
     },
     server(state) {
+      let hostname = state.server.baseUrl.split('.')
+
+      if (hostname.length > 2) {
+        hostname = hostname.slice(-2)
+      } else {
+        hostname = 'server'
+      }
+
       return {
-        name: state.server.baseUrl.split('//')[1],
+        name: hostname,
         connected: state.server.connected
       }
     },

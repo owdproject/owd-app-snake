@@ -12,7 +12,7 @@
         >
           <span
             class="snake-canvas__loading"
-            v-text="`Connecting to ${server.name}...`"
+            v-text="`Connecting to ${server.name}`"
           />
         </div>
 
